@@ -1,6 +1,5 @@
 FROM ubuntu
-MAINTAINER chenjh "842761733@qq.com"
-ADD server/target/kkFileView-*.tar.gz /opt/
+
 COPY fonts/* /usr/share/fonts/chinese/
 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ hirsute main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ hirsute main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ hirsute-security main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ hirsute-security main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ hirsute-updates main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ hirsute-updates main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ hirsute-proposed main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ hirsute-proposed main restricted universe multiverse\ndeb http://mirrors.aliyun.com/ubuntu/ hirsute-backports main restricted universe multiverse\ndeb-src http://mirrors.aliyun.com/ubuntu/ hirsute-backports main restricted universe multiverse" > /etc/apt/sources.list &&\
 	apt-get clean && apt-get update &&\
@@ -32,6 +31,8 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu/ hirsute main restricted universe
     mkfontscale &&\
     mkfontdir &&\
     fc-cache -fv
+
+ADD server/target/kkFileView-*.tar.gz /opt/
 ENV JAVA_HOME /usr/local/jdk1.8.0_251
 ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 ENV PATH $PATH:$JAVA_HOME/bin
