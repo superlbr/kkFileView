@@ -26,6 +26,8 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu/ hirsute main restricted universe
     tar -zxf /tmp/libreoffice_deb.tar.gz && cd /tmp/LibreOffice_7.1.4.2_Linux_x86-64_deb/DEBS &&\
     dpkg -i *.deb &&\
 
+#   清理
+	apt-get clean &&\
 	rm -rf /tmp/* && rm -rf /var/lib/apt/lists/* &&\
     cd /usr/share/fonts/chinese &&\
     mkfontscale &&\
