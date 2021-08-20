@@ -107,6 +107,7 @@ public class OfficeUtils {
                 "/opt/libreoffice6.1",
                 "/opt/libreoffice7.0",
                 "/opt/libreoffice7.1",
+                "/opt/libreoffice7.2",
                 "/opt/openoffice4",
                 "/usr/lib/openoffice",
                 "/usr/lib/libreoffice"
